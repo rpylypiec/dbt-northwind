@@ -1,0 +1,14 @@
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Poetry / Python
+__pycache__/
+*.pyc
+.env
+.venv
+
+# OS
+.DS_Store
+
