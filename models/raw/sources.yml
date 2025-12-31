@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: northwind
+    database: northwind
+    schema: public
+    tables:
+      - name: orders
+      - name: order_details
+
