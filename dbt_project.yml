@@ -20,17 +20,25 @@ models:
     raw:
       enabled: true
       materialized: view
+      +docs:
+        node_color: "#cd7f32"
 
     staging:
       enabled: true
       materialized: view
+      +docs:
+        node_color: "#c0c0c0"
 
     intermediate:
       enabled: true
       materialized: view
+      +docs:
+        node_color: "#f5e6a8"
 
     marts:
       enabled: true
       schema:  gold
       materialized: table
+      +docs:
+        node_color: "#e6b530"
 
