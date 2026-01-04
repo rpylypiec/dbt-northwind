@@ -1,3 +1,8 @@
+--sources
+with source_int_monthly_revenue_ytd as (
+    select * from {{ ref('int_monthly_revenue_ytd') }}
+),
+--regras de negócio
 with monthly_growth_ytd_cte as (
     select
     order_year,
@@ -20,8 +25,8 @@ with monthly_growth_ytd_cte as (
         partition by order_year
         order by order_month
     ) * 100 as monthly_growth_percentage
-from {{ ref('int_monthly_revenue_ytd') }}
+from source_int_monthly_revenue_ytd
 order by order_year, order_month
 )
-
+--querie final
 select * from monthly_growth_ytd_cte

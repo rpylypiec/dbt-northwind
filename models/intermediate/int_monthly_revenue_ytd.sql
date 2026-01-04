@@ -1,3 +1,8 @@
+--source
+with source_int_monthly_revenue as (
+    select * from {{ ref('int_monthly_revenue') }}
+),
+--regra de negócio
 with monthly_revenue_ytd_cte as(
     select
     order_year,
@@ -8,6 +13,7 @@ with monthly_revenue_ytd_cte as(
         order by order_month
         rows between unbounded preceding and current row
     ) as revenue_ytd
-from {{ ref('int_monthly_revenue') }}
+from source_int_monthly_revenue
 )
+--querie final
 select * from monthly_revenue_ytd_cte

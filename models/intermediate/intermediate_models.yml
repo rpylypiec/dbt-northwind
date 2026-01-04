@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: int_order_revenues
+    description: "Cálculo da receita por ano."
+    columns:
+      - name: order_year
+        description: "Ano referente a receita."
+      - name: total_revenue
+        description: "Cálculo de receita dos pedidos por ano."
+
+  - name: int_customer_revenue
+    description: "Receita total consolidada por cliente."
+    columns:
+      - name: customer_id
+        description: "Cliente ao qual a receita está associada."
+        tests:
+          - not_null
+      - name: company_name
+        description: "Nome da empresa."
+      - name: contact_name
+        description: "Nome do responsável pela empresa."
+      - name: country
+        description: "País onde a empresa está localizada."
+      - name: total_revenue
+        description: "Soma total de receita por cliente, responsável da empresa e país."
+
+  - name: int_monthly_revenue
+    description: "Receita agregada por ano e mês."
+    columns:
+      - name: order_year
+        description: "Ano em que o pedido foi realizado."
+      - name: month_year
+        description: "Mês em que o pedido foi realizado."
+      - name: monthly_revenue
+        description: "Total de receita agregada por ano e mês."
+
+  - name: int_monthly_revenue_ytd
+    description: "Receita acumulada no ano (YTD) por mês."
+    columns:
+      - name: order_year
+        description: "Ano em que o pedido foi realizado."
+      - name: month_year
+        description: "Mês em que o pedido foi realizado."
+      - name: monthly_revenue
+        description: "Total de receita agregada do período atual."
+      - name: revenue_ytd
+        description: "Total de receita agregada do mesmo período do ano anterior."

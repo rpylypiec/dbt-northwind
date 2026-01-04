@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: mart_customer_revenue_group
+    description: "Segmentação de clientes por faixa de faturamento."
+    columns:
+      - name: company_name
+        description: "Nome da empresa."
+      - name: total_revenue
+        description: "Total de receita por cliente."
+
+  - name: mart_total_revenue_by_year
+    description: "Receita total agregada por ano para consumo executivo."
+    columns:
+      - name: order_year
+        description: "Ano em que o pedido foi realizado."
+      - name: total_revenue
+        description: "Total de receita no período selecionado."
+
+  - name: mart_monthly_growth_ytd
+    description: "Análise de crescimento mensal da receita acumulada no ano."
+    columns:
+      - name: order_year
+        description: "Ano em que o pedido foi realizado."
+      - name: order_month
+        description: "Mês em que o pedido foi realizado."
+  
+  - name: mart_clients_to_marketing
+    description: "Análise de clientes por grupos para direcionamento a equipe de marketing."
+    columns:
+      - name: company_name
+        description: "Nome da empresa."
+      - name: total_revenue
+        description: "Total de receita por empresa."
+      - name: customer_group
+        description: "Grupo ao qual o cliente está alocado de acordo com as regras de negócio."
+  
+  - name: mart_top_10_products
+    description: "Análise dos top 10 produtos mais vendidos."
+    columns:
+      - name: product_name
+        description: "Nome descritivo do produto."
+      - name: total_sales
+        description: "Total de vendas por produto."
+
+  - name: mart_uk_customers_over1000
+    description: "Análise dos clientes localizados em UK com pagamentos acima de 1000."
+    columns:
+      - name: contact_name
+        description: "Nome do responsável pela empresa."
+      - name: payments
+        description: "Valor total de receita do cliente."

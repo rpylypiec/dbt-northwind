@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: northwind
+  description: "Base transacional Northwind utilizada como fonte do projeto."
+  schema: public
+tables:
+  - name: raw_customers
+    description: "Tabela de clientes do sistema transacional."
+  - name: raw_orders
+    description: "Tabela de pedidos realizados pelos clientes."
+  - name: raw_order_details
+    description: "Itens dos pedidos contendo quantidade e preço unitário."
+  - name: raw_products
+    escription: "Itens dos pedidos contendo quantidade e preço unitário."
