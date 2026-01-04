@@ -4,7 +4,7 @@ with source_customers as (
 )
 ,
 --regras de negócio
-with customers_cte as (
+customers_cte as (
     select
     customer_id,
     company_name,

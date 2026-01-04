@@ -4,7 +4,7 @@ with source_products as (
 )
 ,
 --regra de negócio
-with stg_products_cte as (
+stg_products_cte as (
 select
     product_id,
     product_name

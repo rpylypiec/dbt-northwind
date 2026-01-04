@@ -2,11 +2,11 @@
 with source_orders as (
   select * from {{ ref('stg_orders') }}
 ),
-with source_order_details as (
+source_order_details as (
   select * from {{ ref('stg_order_details') }}
 ),
 --regras de negócio
-with monthly_revenue_cte as (
+monthly_revenue_cte as (
     select
     extract(year from o.order_date)  as order_year,
     extract(month from o.order_date) as order_month,

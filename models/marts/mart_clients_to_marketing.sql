@@ -3,7 +3,7 @@ with source_mart_customer_revenue_group as (
     select * from {{ ref('mart_customer_revenue_group') }}
 ),
 --regras de negócio
-with clients_to_marketing_cte as (
+clients_to_marketing_cte as (
     select
     company_name,
     total_revenue,

@@ -4,7 +4,7 @@ with source_order_details as (
 )
 ,
 --regras de negócio
-with od as(
+od as(
 select
     order_id,
     product_id,

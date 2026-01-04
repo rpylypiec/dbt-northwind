@@ -4,7 +4,7 @@ with source_orders as(
 )
 ,
 --regras de negócio
-with renamed as(
+renamed as(
 select
     order_id,
     customer_id,

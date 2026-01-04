@@ -2,11 +2,11 @@
 with source_products as (
     select * from {{ ref('stg_products') }}
 ),
-with source_order_details as (
+source_order_details as (
     select * from {{ ref('stg_order_details') }}
 ),
 --regras de negócio
-with top_10_products_cte as (
+top_10_products_cte as (
     select
     p.product_name,
     sum(od.line_revenue) as total_sales

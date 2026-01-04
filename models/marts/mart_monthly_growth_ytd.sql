@@ -3,7 +3,7 @@ with source_int_monthly_revenue_ytd as (
     select * from {{ ref('int_monthly_revenue_ytd') }}
 ),
 --regras de negócio
-with monthly_growth_ytd_cte as (
+monthly_growth_ytd_cte as (
     select
     order_year,
     order_month,

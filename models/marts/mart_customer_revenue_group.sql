@@ -3,7 +3,7 @@ with source_int_customer_revenue as (
     select * from {{ ref('int_customer_revenue') }}
 ),
 --regras de negócio
-with customer_revenue_group as (
+customer_revenue_group as (
     select
     company_name,
     total_revenue,
